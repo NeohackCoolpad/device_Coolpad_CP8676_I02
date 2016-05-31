@@ -1,5 +1,5 @@
 # include proprietary libraries and binaries
--include vendor/elephone/p8000/BoardConfigVendor.mk
+-include vendor/coolpad/cp8676/i02/BoardConfigVendor.mk
 
 # use these headers 
 TARGET_SPECIFIC_HEADER_PATH := device/elephone/p8000/include
@@ -8,7 +8,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/elephone/p8000/include
 TARGET_LDPRELOAD += libxlog.so
  
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := Auxus_PRIME_201
+TARGET_BOOTLOADER_BOARD_NAME := 1.01.002.P1.151230.8676_i02
 TARGET_NO_BOOTLOADER := true
  
 # 1st architecture aarch64
@@ -63,7 +63,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_KERNEL_SOURCE := kernel/elephone/p8000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := p8000_cyanogenmod12_1_defconfig
+TARGET_KERNEL_CONFIG := CP8676_I02_cyanogenmod12_1_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
@@ -80,10 +80,10 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_NO_FACTORYIMAGE := true
 
 # system.prop
-TARGET_SYSTEM_PROP := device/elephone/p8000/system.prop
+TARGET_SYSTEM_PROP := device/coolpad/cp8676/i02/system.prop
 
 # CyanogenMod Hardware Hooks
-BOARD_HARDWARE_CLASS := device/elephone/p8000/cmhw/
+BOARD_HARDWARE_CLASS := device/coolpad/cp8676/i02/cmhw/
 
 # WiFi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -134,12 +134,12 @@ VANZO_FEATURE_FACTORYMODE_USE_ENGLISH := yes
 
 # EGL settings
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/elephone/p8000/egl.cfg
+BOARD_EGL_CFG := device/coolpad/cp8676/i02/egl.cfg
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-       device/elephone/p8000/sepolicy
+       device/coolpad/cp8676/i02/sepolicy
 
 BOARD_SEPOLICY_UNION := \
     app.te \

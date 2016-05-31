@@ -70,8 +70,14 @@
     <permission name="android.permission.WRITE_EXTERNAL_STORAGE" >
         <group gid="sdcard_r" />
         <group gid="sdcard_rw" />
-	 <group gid="media_rw" />
     </permission>
+
+    <!-- yulong begin
+    add for FEATURE_SUPPORT_FILESAFEBOX,the group can write safebox add by chenglixing, 20131126 -->
+   <permission name="yulong.permission.READ_WRITE_YLSECURE" >
+        <group gid="ylsecure_rw" />
+    </permission>
+    <!-- yulong end -->
 
     <permission name="android.permission.ACCESS_ALL_EXTERNAL_STORAGE" >
         <group gid="sdcard_r" />
@@ -151,6 +157,11 @@
 
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="graphics" />
 
+    <!-- yulong begin
+    add for FEATURE_SUPPORT_FILESAFEBOX,the group can read phone state ,add by chenglixing, 20131126 -->
+    <assign-permission name="android.permission.READ_PHONE_STATE" uid="ylsecure_rw" />
+    <!-- yulong end -->
+
     <!-- This is a list of all the libraries available for application
          code to link against. -->
 
@@ -158,8 +169,6 @@
             file="/system/framework/android.test.runner.jar" />
     <library name="javax.obex"
             file="/system/framework/javax.obex.jar"/>
-    <library name="javax.btobex"
-            file="/system/framework/javax.btobex.jar"/>
 
     <!-- These are the standard packages that are white-listed to always have internet
          access while in power save mode, even if they aren't in the foreground. -->

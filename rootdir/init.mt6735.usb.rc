@@ -57,16 +57,18 @@ on property:sys.usb.config=adb
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
+#modify by zhanyongding@yulong.com on 2015-5-25 to resolve AT COMM start.
 #3.adb,acm
 on property:sys.usb.config=adb,acm
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
+    write /sys/class/android_usb/android0/idVendor 0BB4
     write /sys/class/android_usb/android0/idProduct 200E
     write /sys/class/android_usb/android0/f_acm/instances 1
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state ${sys.usb.config}
+#modify by zhanyongding@yulong.com on 2015-5-25 to resolve AT COMM end.
 
 #4.mass_storage
 on property:sys.usb.config=mass_storage
@@ -80,21 +82,23 @@ on property:sys.usb.config=mass_storage
 #5.mass_storage,adb
 on property:sys.usb.config=mass_storage,adb
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-    write /sys/class/android_usb/android0/idProduct 2003
+    write /sys/class/android_usb/android0/idVendor 1EBF
+    write /sys/class/android_usb/android0/idProduct 7028
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
+#modify by sunxiaogang@yulong.com at 20150525 to mach pid and vid witch yulong driver start.
 #6.mtp
 on property:sys.usb.config=mtp
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-    write /sys/class/android_usb/android0/idProduct 2008
+    write /sys/class/android_usb/android0/idVendor 1EBF
+    write /sys/class/android_usb/android0/idProduct 70CE
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     setprop sys.usb.state ${sys.usb.config}
+#modify by sunxiaogang@yulong.com at 20150525 to mach pid and vid witch yulong driver end.
 
 #7.mtp,acm
 on property:sys.usb.config=mtp,acm
@@ -109,11 +113,10 @@ on property:sys.usb.config=mtp,acm
 #8.mtp,adb
 on property:sys.usb.config=mtp,adb
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-    write /sys/class/android_usb/android0/idProduct 201D
+    write /sys/class/android_usb/android0/idVendor 1EBF
+    write /sys/class/android_usb/android0/idProduct 7041
     write /sys/class/android_usb/android0/functions mtp,adb
     write /sys/class/android_usb/android0/enable 1
-    write /sys/class/android_usb/android0/iSerial ${persist.radio.serial}
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
@@ -147,14 +150,16 @@ on property:sys.usb.config=mtp,mass_storage,adb
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
+#modify by sunxiaogang@yulong.com at 20150525 to mach pid and vid witch yulong driver start.
 #12.ptp
 on property:sys.usb.config=ptp
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-    write /sys/class/android_usb/android0/idProduct 200B
+    write /sys/class/android_usb/android0/idVendor 1EBF
+    write /sys/class/android_usb/android0/idProduct 6823
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     setprop sys.usb.state ${sys.usb.config}
+#modify by sunxiaogang@yulong.com at 20150525 to mach pid and vid witch yulong driver end.
 
 #13.ptp,acm
 on property:sys.usb.config=ptp,acm
@@ -169,8 +174,8 @@ on property:sys.usb.config=ptp,acm
 #14.ptp,adb
 on property:sys.usb.config=ptp,adb
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-    write /sys/class/android_usb/android0/idProduct 200C
+    write /sys/class/android_usb/android0/idVendor 1EBF
+    write /sys/class/android_usb/android0/idProduct 705A
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     start adbd
@@ -206,15 +211,17 @@ on property:sys.usb.config=ptp,mass_storage,adb
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
+#modify by sunxiaogang@yulong.com at 20150525 to mach pid and vid witch yulong driver start.
 #18.rndis
 on property:sys.usb.config=rndis
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-    write /sys/class/android_usb/android0/idProduct 2004
-    write /sys/class/android_usb/android0/functions ${sys.usb.config}
+    write /sys/class/android_usb/android0/idVendor 1EBF
+    write /sys/class/android_usb/android0/idProduct 7095
+    write /sys/class/android_usb/android0/functions rndis,acm
     write /sys/class/android_usb/android0/bDeviceClass 224
     write /sys/class/android_usb/android0/enable 1
     setprop sys.usb.state ${sys.usb.config}
+#modify by sunxiaogang@yulong.com at 20150525 to mach pid and vid witch yulong driver end.
 
 #19.rndis,acm
 on property:sys.usb.config=rndis,acm
@@ -229,8 +236,8 @@ on property:sys.usb.config=rndis,acm
 #20.rndis,adb
 on property:sys.usb.config=rndis,adb
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-    write /sys/class/android_usb/android0/idProduct 2005
+    write /sys/class/android_usb/android0/idVendor 1EBF
+    write /sys/class/android_usb/android0/idProduct 7096
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     start adbd
@@ -370,20 +377,20 @@ on property:sys.usb.config=ptp,mass_storage,adb,acm
 #    setprop sys.usb.state ${sys.usb.config}
 
 #34.USB Charging Only configuration
-#on property:sys.usb.config=charging
-#    setprop sys.usb.state ${sys.usb.config}
-#    setprop sys.usb.charging yes
+on property:sys.usb.config=charging
+    setprop sys.usb.state ${sys.usb.config}
+    setprop sys.usb.charging yes
 
-#on property:sys.usb.charging=yes
-#    write /sys/class/android_usb/android0/enable 0
-#	write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-#	write /sys/class/android_usb/android0/idProduct 2008
-#	write /sys/class/android_usb/android0/functions mtp
-#    write /sys/class/android_usb/android0/enable 1
-#    write /sys/devices/platform/mt_usb/cmode 2
+on property:sys.usb.charging=yes
+    write /sys/class/android_usb/android0/enable 0
+	write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
+	write /sys/class/android_usb/android0/idProduct 2008
+	write /sys/class/android_usb/android0/functions mtp
+    write /sys/class/android_usb/android0/enable 1
+    write /sys/devices/platform/mt_usb/cmode 2
 
-#on property:sys.usb.charging=no
-#    write /sys/devices/platform/mt_usb/cmode 1
+on property:sys.usb.charging=no
+    write /sys/devices/platform/mt_usb/cmode 1
 
 #35.USB BICR configuration(mass_storage)
 on property:sys.usb.config=bicr

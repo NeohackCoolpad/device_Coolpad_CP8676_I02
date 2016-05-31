@@ -13,6 +13,30 @@
         <kctl name="Audio_Amp_R_Switch" value="Off" />
         <kctl name="Audio_Amp_L_Switch" value="Off" />      
     </path>
+    <path name="headphone_output_l" value="turnon">
+        <kctl name="Audio_Amp_R_Switch" value="Off" />
+        <kctl name="Audio_Amp_L_Switch" value="On" />
+        <kctl name="Headset_PGAR_GAIN" value="-40Db" />
+        <kctl name="Headset_PGAL_GAIN" value="8Db" />
+    </path>
+    <path name="headphone_output_l" value="turnoff">
+        <kctl name="Audio_Amp_R_Switch" value="Off" />
+        <kctl name="Audio_Amp_L_Switch" value="Off" />
+        <kctl name="Headset_PGAR_GAIN" value="-40Db" />
+        <kctl name="Headset_PGAL_GAIN" value="-40Db" />
+    </path>
+    <path name="headphone_output_r" value="turnon">
+        <kctl name="Audio_Amp_R_Switch" value="On" />
+        <kctl name="Audio_Amp_L_Switch" value="Off" />
+        <kctl name="Headset_PGAR_GAIN" value="8Db" />
+        <kctl name="Headset_PGAL_GAIN" value="-40Db" />
+    </path>
+    <path name="headphone_output_r" value="turnoff">
+        <kctl name="Audio_Amp_R_Switch" value="Off" />
+        <kctl name="Audio_Amp_L_Switch" value="Off" />
+        <kctl name="Headset_PGAL_GAIN" value="-40Db" />
+        <kctl name="Headset_PGAR_GAIN" value="-40Db" />
+    </path>
     <!--receiver output-->    
     <path name="receiver_output" value="turnon">
         <kctl name="Voice_Amp_Switch" value="On" />
@@ -31,10 +55,12 @@
     </path>
    <!--speaker output-->
     <path name="speaker_output" value="turnon">
+        <kctl name="Audio_Speaker_class_Switch" value="CALSSD" />
         <kctl name="Speaker_Amp_Switch" value="On" />
     </path>
     <path name="speaker_output" value="turnoff">
         <kctl name="Speaker_Amp_Switch" value="Off" />
+        <kctl name="Audio_Speaker_class_Switch" value="CLASSAB" />
     </path> 
     <!--headhpone_speaker output-->    
     <path name="headphoneSpeaker_output" value="turnon">
@@ -156,7 +182,7 @@
     <path name="headset_mic_input" value="turnon">
         <kctl name="Audio_MicSource1_Setting" value="ADC2" />
         <kctl name="Audio_ADC_1_Switch" value="On" />
-        <kctl name="Audio_ADC_2_Switch" value="On" />
+        <!--kctl name="Audio_ADC_2_Switch" value="On" /-->
         <kctl name="Audio_Preamp1_Switch" value="IN_ADC2" />
         <kctl name="Audio_Preamp2_Switch" value="IN_ADC2" />        
     </path>
@@ -164,7 +190,7 @@
         <kctl name="Audio_Preamp1_Switch" value="OPEN" />
         <kctl name="Audio_Preamp2_Switch" value="OPEN" />			
         <kctl name="Audio_ADC_1_Switch" value="Off" />
-        <kctl name="Audio_ADC_2_Switch" value="Off" />
+        <!--kctl name="Audio_ADC_2_Switch" value="Off" /-->
     </path>
     <path name="sidetone_switch" value="turnon">
         <kctl name="Audio_Sidetone_Switch" value="On" />
@@ -238,7 +264,7 @@
     </path>
     <path name="Mic_Setting_Inverse" value="setting">
         <kctl name="Audio_Preamp1_Switch" value="IN_ADC3" />>
-        <kctl name="Audio_Preamp2_Switch" value="IN_ADC1" />>        
+        <kctl name="Audio_Preamp2_Switch" value="IN_ADC1" />>
     </path>
     <path name="Mic_Setting_NoInverse" value="setting">
         <kctl name="Audio_Preamp1_Switch" value="IN_ADC1" />>
