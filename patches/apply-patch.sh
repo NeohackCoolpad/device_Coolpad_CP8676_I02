@@ -34,9 +34,9 @@ cd ../..
 cd packages/services/Telephony
 git apply -v ../../../device/elephone/p8000/patches/packages_services_telephony/NeedsFakeIccid.patch
 cd ../../..
-#cd system/core
-#git apply -v ../../device/elephone/p8000/patches/system_core/fix-boot-for-mtk.patch
-#cd ../..
+cd system/core
+git apply -v ../../device/elephone/p8000/patches/system_core/fix-boot-for-mtk.patch
+cd ../..
 cd system/netd
 git apply -v ../../device/elephone/p8000/patches/system_netd/hotpost-fix.patch
 cd ../..
