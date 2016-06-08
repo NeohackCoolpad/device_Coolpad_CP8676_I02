@@ -5,43 +5,43 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product, vendor/coolpad/cp8676/i02/i02-vendor.mk)
+$(call inherit-product, vendor/coolpad/cp8676i02/cp8676i02-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/coolpad/cp8676/i02/i02/overlay
+DEVICE_PACKAGE_OVERLAYS += device/coolpad/cp8676i02/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := CP8676-I02
+TARGET_OTA_ASSERT_DEVICE := CP8676_I02
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/coolpad/cp8676/i02/prebuilt/kernel
+	LOCAL_KERNEL := device/coolpad/cp8676i02/prebuilt/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 # init.rc's
 PRODUCT_COPY_FILES += \
-	device/coolpad/cp8676/i02/rootdir/init.mt6735.rc:root/init.mt6735.rc \
-	device/coolpad/cp8676/i02/rootdir/init.ssd.rc:root/init.ssd.rc \
-	device/coolpad/cp8676/i02/rootdir/init.xlog.rc:root/init.xlog.rc \
-	device/coolpad/cp8676/i02/rootdir/init.rc:root/init.rc \
-	device/coolpad/cp8676/i02/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
-	device/coolpad/cp8676/i02/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc \
-	device/coolpad/cp8676/i02/rootdir/init.project.rc:root/init.project.rc \
-	device/coolpad/cp8676/i02/rootdir/init.modem.rc:root/init.modem.rc \
-	device/coolpad/cp8676/i02/recovery/root/fstab.mt6753:root/fstab.mt6735  \
-	device/coolpad/cp8676/i02/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
-	device/coolpad/cp8676/i02/rootdir/factory_init.rc:root/factory_init.rc \
-	device/coolpad/cp8676/i02/rootdir/factory_init.project.rc:root/factory_init.project.rc \
-	device/coolpad/cp8676/i02/rootdir/meta_init.project.rc:root/meta_init.project.rc \
-	device/coolpad/cp8676/i02/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
-	device/coolpad/cp8676/i02/rootdir/meta_init.rc:root/meta_init.rc 
+	device/coolpad/cp8676i02/rootdir/init.mt6735.rc:root/init.mt6735.rc \
+	device/coolpad/cp8676i02/rootdir/init.ssd.rc:root/init.ssd.rc \
+	device/coolpad/cp8676i02/rootdir/init.xlog.rc:root/init.xlog.rc \
+	device/coolpad/cp8676i02/rootdir/init.rc:root/init.rc \
+	device/coolpad/cp8676i02/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
+	device/coolpad/cp8676i02/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc \
+	device/coolpad/cp8676i02/rootdir/init.project.rc:root/init.project.rc \
+	device/coolpad/cp8676i02/rootdir/init.modem.rc:root/init.modem.rc \
+	device/coolpad/cp8676i02/recovery/root/fstab.mt6753:root/fstab.mt6735  \
+	device/coolpad/cp8676i02/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
+	device/coolpad/cp8676i02/rootdir/factory_init.rc:root/factory_init.rc \
+	device/coolpad/cp8676i02/rootdir/factory_init.project.rc:root/factory_init.project.rc \
+	device/coolpad/cp8676i02/rootdir/meta_init.project.rc:root/meta_init.project.rc \
+	device/coolpad/cp8676i02/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
+	device/coolpad/cp8676i02/rootdir/meta_init.rc:root/meta_init.rc 
 
 # TWRP thanks to Hanuma50
-PRODUCT_COPY_FILES += device/coolpad/cp8676/i02/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES += device/coolpad/cp8676i02/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
 
 # hardware specifics
@@ -81,8 +81,8 @@ PRODUCT_PACKAGES += slfpcal
 PRODUCT_PACKAGES += libslfpjni
 PRODUCT_PACKAGES += libsileadinc_dev
 
-include device/coolpad/cp8676/i02/MediaTek/Fingerprint/slfpcal/Android.mk
-include device/coolpad/cp8676/i02/MediaTek/Fingerprint/fp/Android.mk
+include device/coolpad/cp8676i02/MediaTek/Fingerprint/slfpcal/Android.mk
+include device/coolpad/cp8676i02/MediaTek/Fingerprint/fp/Android.mk
 
 # Gralloc
 PRODUCT_PACKAGES += \
@@ -183,7 +183,7 @@ PRODUCT_COPY_FILES += \
 
 
 PRODUCT_COPY_FILES += \
-    	device/coolpad/cp8676/i02/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    	device/coolpad/cp8676i02/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 
 # limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \

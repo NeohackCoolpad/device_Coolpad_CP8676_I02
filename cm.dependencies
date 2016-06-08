@@ -5,15 +5,15 @@
     "branch": "cm-12.1"
   },
   {
-    "remote": "visi0nary"
-    "repository": "android_kernel_elephone_p8000",
-    "target_path": "kernel/elephone/p8000",
-    "branch": "cm-12.1"
+    "remote": "neohackt"
+    "repository": "kernel_coolpad_cp8676i02",
+    "target_path": "kernel/coolpad/cp8676i02",
+    "branch": "gk"
   },
   {
-    "remote": "visi0nary"
-    "repository": "android_vendor_elephone_p8000",
-    "target_path": "vendor/elephone/p8000",
-    "branch": "master"
+    "remote": "neohackt"
+    "repository": "vendor_coolpad_cp8676i02",
+    "target_path": "vendor/coolpad/cp8676i02",
+    "branch": "wip"
   }
 ]
