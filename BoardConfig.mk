@@ -1,8 +1,8 @@
 # include proprietary libraries and binaries
--include vendor/coolpad/cp8676i02/BoardConfigVendor.mk
+-include vendor/Coolpad/CP8676_I02/BoardConfigVendor.mk
 
 # use these headers 
-TARGET_SPECIFIC_HEADER_PATH := device/coolpad/cp8676i02/include
+TARGET_SPECIFIC_HEADER_PATH := device/Coolpad/CP8676_I02/include
  
 # Link against libxlog
 TARGET_LDPRELOAD += libxlog.so
@@ -60,7 +60,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 444596224
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # build kernel from source
-TARGET_KERNEL_SOURCE := kernel/coolpad/cp8676i02
+TARGET_KERNEL_SOURCE := kernel/Coolpad/CP8676_I02
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := CP8676_I02_defconfig
@@ -80,10 +80,10 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_NO_FACTORYIMAGE := true
 
 # system.prop
-TARGET_SYSTEM_PROP := device/coolpad/cp8676i02/system.prop
+TARGET_SYSTEM_PROP := device/Coolpad/CP8676_I02/system.prop
 
 # CyanogenMod Hardware Hooks
-BOARD_HARDWARE_CLASS := device/coolpad/cp8676i02/cmhw/
+BOARD_HARDWARE_CLASS := device/Coolpad/CP8676_I02/cmhw/
 
 # WiFi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -104,7 +104,7 @@ BOARD_USES_LEGACY_MTK_AV_BLOB := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/coolpad/cp8676i02/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/Coolpad/CP8676_I02/bluetooth
 
 # GPS
 BOARD_GPS_LIBRARIES :=true
@@ -134,12 +134,12 @@ VANZO_FEATURE_FACTORYMODE_USE_ENGLISH := yes
 
 # EGL settings
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/coolpad/cp8676i02/egl.cfg
+BOARD_EGL_CFG := device/Coolpad/CP8676_I02/egl.cfg
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-       device/coolpad/cp8676i02/sepolicy
+       device/Coolpad/CP8676_I02/sepolicy
 
 BOARD_SEPOLICY_UNION := \
     app.te \
@@ -327,8 +327,8 @@ BOARD_SEPOLICY_UNION += \
 BLOCK_BASED_OTA := false
 
 # recovery
-#TARGET_RECOVERY_INITRC := device/coolpad/cp8676i02/recovery/init.mt6753.rc
-TARGET_RECOVERY_FSTAB := device/coolpad/cp8676i02/recovery/root/fstab.mt6753
+#TARGET_RECOVERY_INITRC := device/Coolpad/CP8676_I02/recovery/init.mt6753.rc
+TARGET_RECOVERY_FSTAB := device/Coolpad/CP8676_I02/recovery/root/fstab.mt6753
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
 
 # use power button for selections in recovery
