@@ -4,3 +4,4 @@ Device repository for Coolpad Note 3 CM12.1
 ## Thanks to:
  * AudioGod
  * Tarun
+ * NeoHackt
